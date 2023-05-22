@@ -10,7 +10,7 @@
             <!-- small box -->
             <div class="small-box bg-info">
                 <div class="inner">
-                    <h3>{{ $transactions }}</h3>
+                    {{-- <h3>{{ $transactions }}</h3> --}}
 
                     <p>Transactions</p>
                 </div>
@@ -25,7 +25,7 @@
             <!-- small box -->
             <div class="small-box bg-warning">
                 <div class="inner">
-                    <h3>{{ $suppliers }}<sup style="font-size: 20px"></sup></h3>
+                    {{-- <h3>{{ $suppliers }}<sup style="font-size: 20px"></sup></h3> --}}
 
                     <p>Suppliers</p>
                 </div>
@@ -40,7 +40,7 @@
             <!-- small box -->
             <div class="small-box bg-warning">
                 <div class="inner">
-                    <h3>{{ $users }}</h3>
+                    {{-- <h3>{{ $users }}</h3> --}}
 
                     <p>Users</p>
                 </div>
@@ -55,7 +55,7 @@
             <!-- small box -->
             <div class="small-box bg-info">
                 <div class="inner">
-                    <h3>{{ $stuffs }}</h3>
+                    {{-- <h3>{{ $stuffs }}</h3> --}}
 
                     <p>Stuffs</p>
                 </div>
@@ -70,7 +70,7 @@
             <!-- small box -->
             <div class="small-box bg-warning">
                 <div class="inner">
-                    <h3>{{ $clients }}</h3>
+                    {{-- <h3>{{ $clients }}</h3> --}}
 
                     <p>Clients</p>
                 </div>
@@ -84,7 +84,7 @@
             <!-- small box -->
             <div class="small-box bg-info">
                 <div class="inner">
-                    <h3>{{ $payments }}</h3>
+                    {{-- <h3>{{ $payments }}</h3> --}}
 
                     <p>Payments</p>
                 </div>

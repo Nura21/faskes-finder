@@ -18,7 +18,7 @@ return new class extends Migration
             $table->string('password');
             $table->rememberToken();
             $table->timestamps();
-            $table->date('deleted_at');
+            $table->date('deleted_at')->nullable();
         });
     }
 
