@@ -2,6 +2,8 @@
 
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\AuthController;
+use App\Http\Controllers\UserController;
+use App\Http\Controllers\HealthFacilitiesController;
 
 /*
 |--------------------------------------------------------------------------
@@ -22,7 +24,6 @@ Route::get('login', function(){
     return view('auth.login');
 });
 
-Route::post('login', [AuthController::class, 'login']);
-Route::get('dashboard', function(){
-    return view('dashboard');
-});
+Route::post('loginPost', [AuthController::class, 'login']);
+Route::resource('health-facilities', HealthFacilitiesController::class);
+Route::resource('users', UserController::class);

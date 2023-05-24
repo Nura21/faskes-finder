@@ -12,7 +12,11 @@ class HealthFacilitiesController extends Controller
      */
     public function index()
     {
-        //
+        $healthFacilities = HealthFacilities::query()
+            ->select(['name', 'lat', 'long'])
+            ->get();
+
+        return view('manages')
     }
 
     /**

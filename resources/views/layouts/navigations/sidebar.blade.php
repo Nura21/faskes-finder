@@ -15,10 +15,21 @@
                         <p>List</p>
                     </a>
                 </li>
+            </ul>
+        </li>
+        <li class="nav-item">
+            <a href="#" class="nav-link">
+                <i class="nav-icon fas fa-users"></i>
+                <p>
+                    Health Faculty
+                    <i class="fas fa-angle-left right"></i>
+                </p>
+            </a>
+            <ul class="nav nav-treeview">
                 <li class="nav-item">
-                    <a href="{{ url('users/create') }}" class="nav-link">
+                    <a href="{{ url('health-facilities') }}" class="nav-link">
                         <i class="far fa-circle nav-icon"></i>
-                        <p>Create</p>
+                        <p>List</p>
                     </a>
                 </li>
             </ul>

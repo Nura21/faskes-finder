@@ -1,5 +1,5 @@
 @extends('layouts.navigations.default')
-@section('title', 'Penjualan User')
+@section('title', 'User')
 @section('body-class', 'hold-transition sidebar-mini')
 @section('main-menu', 'User')
 @section('menu', 'User')
@@ -9,7 +9,9 @@
         <div class="col-md-12">
             <div class="card card-primary">
                 <div class="card-header">
-                    <h3 class="card-title">General</h3>
+                    <a class="btn btn-light" style="color:black;">
+                        <h3 class="card-title">Create</h3>
+                    </a>
 
                     <div class="card-tools">
                         <button type="button" class="btn btn-tool" data-card-widget="collapse" title="Collapse">
@@ -22,9 +24,7 @@
                         <thead>
                             <tr>
                                 <th>No</th>
-                                <th>Nama</th>
-                                <th>Username</th>
-                                <th>Password</th>
+                                <th>Email</th>
                                 <th>Action</th>
                             </tr>
                         </thead>
@@ -32,9 +32,7 @@
                             @foreach ($users as $u)
                                 <tr>
                                     <td>{{ $loop->iteration }}</td>
-                                    <td>{{ $u->nama }}</td>
-                                    <td>{{ $u->username }}</td>
-                                    <td>{{ $u->password }}</td>
+                                    <td>{{ $u->email }}</td>
                                     <td>
                                         <a href="{{ url('users/' . $u->id . '/edit') }}"
                                             class="btn btn-warning btn-sm">Edit</a>

@@ -22,7 +22,7 @@
             <div class="card-body">
                 {{-- <p class="login-box-msg">{{ __('auth.login') }}</p> --}}
 
-                <form action="{{ url(request()->segment(1)) }}" method="POST" id="loginForm">
+                <form action="{{ url('loginPost') }}" method="POST" id="loginForm">
                     @csrf
                     @include('auth._login-form')
                 </form>
