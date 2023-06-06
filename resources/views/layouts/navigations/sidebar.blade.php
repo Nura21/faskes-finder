@@ -2,7 +2,7 @@
     <ul class="nav nav-pills nav-sidebar flex-column" data-widget="treeview" role="menu" data-accordion="false">
         <li class="nav-item">
             <a href="#" class="nav-link">
-                <i class="nav-icon fas fa-users"></i>
+                <i class="nav-icon fas fa-user mr-md-2"></i>
                 <p>
                     Users
                     <i class="fas fa-angle-left right"></i>
@@ -19,9 +19,9 @@
         </li>
         <li class="nav-item">
             <a href="#" class="nav-link">
-                <i class="nav-icon fas fa-users"></i>
+                <i class="far fa-hospital ml-1"></i>
                 <p>
-                    Health Faculty
+                    &nbsp;Health Faculty
                     <i class="fas fa-angle-left right"></i>
                 </p>
             </a>

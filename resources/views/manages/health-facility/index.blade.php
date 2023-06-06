@@ -1,9 +1,9 @@
 @extends('layouts.navigations.default')
-@section('title', 'User')
+@section('title', __('health_facility.name'))
 @section('body-class', 'hold-transition sidebar-mini')
-@section('main-menu', 'User')
-@section('menu', 'User')
-@section('process', 'Read User')
+@section('main-menu', __('health_facility.name'))
+@section('menu', __('health_facility.name'))
+@section('process', __('general.read').' '.__('health_facility.name'))
 @section('main')
     <div class="row">
         <div class="col-md-12">
@@ -20,20 +20,20 @@
                         <thead>
                             <tr>
                                 <th>No</th>
-                                <th>{{ __('user.email') }}</th>
-                                <th>{{ __('user.password') }}</th>
-                                <th>{{ __('user.token') }}</th>
-                                <th>{{ __('user.created_at') }}</th>
+                                <th>{{ __('health_facility.name') }}</th>
+                                <th>{{ __('health_facility.lat') }}</th>
+                                <th>{{ __('health_facility.long') }}</th>
+                                <th>{{ __('general.created_at') }}</th>
                             </tr>
                         </thead>
                         <tbody>
-                            @foreach ($users as $u)
+                            @foreach ($healthFacilities as $health)
                                 <tr>
                                     <td>{{ $loop->iteration }}</td>
-                                    <td>{{ $u->email }}</td>
-                                    <td>{{ $u->password }}</td>
-                                    <th>{{ $u->remember_token }}</th>
-                                    <th>{{ $u->created_at }}</th>
+                                    <td>{{ $health->name }}</td>
+                                    <td>{{ $health->lat }}</td>
+                                    <th>{{ $health->long }}</th>
+                                    <th>{{ $health->created_at }}</th>
                                 </tr>
                             @endforeach
                         </tbody>

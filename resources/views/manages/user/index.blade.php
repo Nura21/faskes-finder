@@ -23,17 +23,17 @@
                                 <th>{{ __('user.email') }}</th>
                                 <th>{{ __('user.password') }}</th>
                                 <th>{{ __('user.token') }}</th>
-                                <th>{{ __('user.created_at') }}</th>
+                                <th>{{ __('general.created_at') }}</th>
                             </tr>
                         </thead>
                         <tbody>
-                            @foreach ($users as $u)
+                            @foreach ($users as $user)
                                 <tr>
                                     <td>{{ $loop->iteration }}</td>
-                                    <td>{{ $u->email }}</td>
-                                    <td>{{ $u->password }}</td>
-                                    <th>{{ $u->remember_token }}</th>
-                                    <th>{{ $u->created_at }}</th>
+                                    <td>{{ $user->email }}</td>
+                                    <td>{{ $user->password }}</td>
+                                    <th>{{ $user->remember_token }}</th>
+                                    <th>{{ $user->created_at }}</th>
                                 </tr>
                             @endforeach
                         </tbody>

@@ -45,9 +45,10 @@
             <aside class="main-sidebar sidebar-dark-primary elevation-4">
                 <!-- Brand Logo -->
                 <a href="" class="brand-link">
-                    <img src="/assets/images/icon-only.png" alt="Logo" class="brand-image vertical-center"
-                        style="float: none;">
-                    <!-- <span class="brand-text font-weight-light">LEGALINKU</span> -->
+                    {{-- <img src="/assets/images/icon-only.png" alt="Logo" class="brand-image vertical-center"
+                        style="float: none;"> --}}
+                    <i class="far fa-search-location ml-md-3"></i>
+                    <span class="brand-text font-weight-light">FASKES FINDER</span>
                     {{-- <img src="/assets/images/icon-only-label.png" alt="Legalinku" class="brand-text"> --}}
                 </a>
                 <div class="sidebar">
