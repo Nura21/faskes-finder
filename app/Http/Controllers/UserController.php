@@ -3,17 +3,13 @@
 namespace App\Http\Controllers;
 
 use App\Models\User;
-use Illuminate\Http\Request;
 
 class UserController extends Controller
 {
-    /**
-     * Display a listing of the resource.
-     */
     public function index()
     {
         $users = User::query()
-            ->select('email')
+            ->select(['email', 'password', 'remember_token', 'created_at'])
             ->get();
 
         return view('manages.user.index', compact("users"));

@@ -1,9 +1,9 @@
 @extends('layouts.navigations.default')
-@section('title', __('user.user'))
+@section('title', 'User')
 @section('body-class', 'hold-transition sidebar-mini')
-@section('main-menu', __('user.user'))
-@section('menu', __('user.user'))
-@section('process', __('general.read').' '. __('user.user'))
+@section('main-menu', 'User')
+@section('menu', 'User')
+@section('process', 'Read User')
 @section('main')
     <div class="row">
         <div class="col-md-12">

@@ -16,7 +16,7 @@ class HealthFacilitiesController extends Controller
             ->select(['name', 'lat', 'long'])
             ->get();
 
-        return view('manages')
+        return view('manages.');
     }
 
     /**

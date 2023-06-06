@@ -26,4 +26,4 @@ Route::get('login', function(){
 
 Route::post('loginPost', [AuthController::class, 'login']);
 Route::resource('health-facilities', HealthFacilitiesController::class);
-Route::resource('users', UserController::class);
+Route::get('users', [UserController::class, 'index']);
