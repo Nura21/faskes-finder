@@ -16,8 +16,9 @@ return new class extends Migration
             $table->string('name');
             $table->string('lat');
             $table->string('long');
+            $table->string('status')->default('ACTIVE');
             $table->timestamps();
-            $table->date('deleted_at');
+            $table->date('deleted_at')->nullable();
         });
     }
 

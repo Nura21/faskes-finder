@@ -2,7 +2,6 @@
 
 namespace App\Http\Controllers;
 
-use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Hash;
 use App\Http\Requests\AuthRequest;
@@ -17,7 +16,7 @@ class AuthController extends Controller
             $user = User::where('email', $request->email)->first();
 
             if (!empty($user) && Hash::check($request->password, $user->password)) {
-                
+
                 return view('dashboard')->with([
                     "success" => 'Berhasil Login',
                     "users" => count(User::all()),

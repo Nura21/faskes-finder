@@ -20,10 +20,10 @@ Route::get('/', function () {
     return view('welcome');
 });
 
-Route::get('login', function(){
-    return view('auth.login');
-});
-
+Route::view('login', 'auth.login');
 Route::post('loginPost', [AuthController::class, 'login']);
-Route::resource('health-facilities', HealthFacilitiesController::class);
-Route::get('users', [UserController::class, 'index']);
+
+Route::middleware()->group(function () {
+    Route::resource('health-facilities', HealthFacilitiesController::class);
+    Route::get('users', [UserController::class, 'index']);
+});

@@ -1,9 +1,9 @@
 @extends('layouts.navigations.default')
-@section('title', 'Penjualan User')
+@section('title', __('health_facility.name'))
 @section('body-class', 'hold-transition sidebar-mini')
-@section('main-menu', 'User')
-@section('menu', 'User')
-@section('process', 'Create User')
+@section('main-menu', __('health_facility.name'))
+@section('menu', __('health_facility.name'))
+@section('process', __('general.btn.crt').' '.__('health_facility.name'))
 @section('main')
     <div class="row">
         <div class="col-md-12">
@@ -18,38 +18,38 @@
                     </div>
                 </div>
                 <div class="card-body">
-                    <form action="{{ url('users') }}" method="POST">
+                    <form action="{{ route('health-facilities.store') }}" method="POST">
                         @csrf
                         <div class="form-group">
-                            <label for="fullname">Nama Lengkap</label>
-                            <input type="text" id="nama" name="nama"
-                                class="form-control @error('nama') is-invalid @enderror" value="{{ old('nama') }}"
+                            <label for="name">{{ __('health_facility.name') }}</label>
+                            <input type="text" id="name" name="name"
+                                class="form-control @error('name') is-invalid @enderror" value="{{ old('name') }}"
                                 required>
-                            @error('nama')
+                            @error('name')
                                 <div class="alert alert-danger">{{ $message }}</div>
                             @enderror
                         </div>
                         <div class="form-group">
-                            <label for="username">Username</label>
-                            <input type="text" id="username" name="username"
-                                class="form-control @error('username') is-invalid @enderror" value="{{ old('username') }}"
+                            <label for="lat">{{ __('health_facility.lat') }}</label>
+                            <input type="text" id="lat" name="lat"
+                                class="form-control @error('lat') is-invalid @enderror" value="{{ old('lat') }}"
                                 required>
-                            @error('username')
+                            @error('lat')
                                 <div class="alert alert-danger">{{ $message }}</div>
                             @enderror
                         </div>
                         <div class="form-group">
-                            <label for="password">Password</label>
-                            <input type="password" id="password" name="password"
-                                class="form-control @error('password') is-invalid @enderror" value="{{ old('password') }}"
+                            <label for="long">{{ __('health_facility.long') }}</label>
+                            <input type="long" id="long" name="long"
+                                class="form-control @error('long') is-invalid @enderror" value="{{ old('long') }}"
                                 required>
-                            @error('password')
+                            @error('long')
                                 <div class="alert alert-danger">{{ $message }}</div>
                             @enderror
                         </div>
 
                         <div class="form-group">
-                            <button type="submit" class="btn-dark">Create</button>
+                            <button type="submit" class="btn-dark">{{ __('general.btn.crt') }}</button>
                         </div>
                 </div>
                 </form>

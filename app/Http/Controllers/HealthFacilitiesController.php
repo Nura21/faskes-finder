@@ -2,8 +2,8 @@
 
 namespace App\Http\Controllers;
 
+use App\Http\Requests\HealthFacilitiesRequest;
 use App\Models\HealthFacilities;
-use Illuminate\Http\Request;
 
 class HealthFacilitiesController extends Controller
 {
@@ -13,7 +13,8 @@ class HealthFacilitiesController extends Controller
     public function index()
     {
         $healthFacilities = HealthFacilities::query()
-            ->select(['name', 'lat', 'long', 'created_at'])
+            ->select(['id', 'name', 'lat', 'long', 'status', 'created_at'])
+            ->where('status', 'ACTIVE')
             ->get();
 
         return view('manages.health-facility.index', compact("healthFacilities"));
@@ -24,23 +25,21 @@ class HealthFacilitiesController extends Controller
      */
     public function create()
     {
-        //
+        return view('manages.health-facility.create');
     }
 
     /**
      * Store a newly created resource in storage.
      */
-    public function store(Request $request)
+    public function store(HealthFacilitiesRequest $request)
     {
-        //
-    }
+        HealthFacilities::create([
+            'name' => $request->name,
+            'lat' => $request->lat,
+            'long' => $request->long,
+        ]);
 
-    /**
-     * Display the specified resource.
-     */
-    public function show(HealthFacilities $healthFacilities)
-    {
-        //
+        return redirect('health-facilities');
     }
 
     /**
@@ -48,22 +47,32 @@ class HealthFacilitiesController extends Controller
      */
     public function edit(HealthFacilities $healthFacilities)
     {
-        //
+        return view('manages.health-facility.edit', compact('healthFacilities'));
     }
 
     /**
      * Update the specified resource in storage.
      */
-    public function update(Request $request, HealthFacilities $healthFacilities)
+    public function update(HealthFacilitiesRequest $request, HealthFacilities $healthFacilities)
     {
-        //
+        $healthFacilities->update([
+            'name' => $request->name,
+            'lat' => $request->lat,
+            'long' => $request->long,
+        ]);
+
+        return redirect('health-facilities');
     }
 
     /**
      * Remove the specified resource from storage.
      */
-    public function destroy(HealthFacilities $healthFacilities)
+    public function destroy($id)
     {
-        //
+        $healthFacilities = HealthFacilities::findOrFail($id);
+
+        $healthFacilities->delete();
+
+        return redirect('health-facilities');
     }
 }

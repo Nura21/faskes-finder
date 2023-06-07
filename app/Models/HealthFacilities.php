@@ -40,5 +40,20 @@ class HealthFacilities extends Model
         'name',
         'lat',
         'long',
+        'status',
     ];
+
+    /**
+     * Validation
+     */
+    protected $rules = [
+        'name' => 'required',
+        'lat' => 'required',
+        'long' => 'required',
+    ];
+
+    public function getRules()
+    {
+        return $this->rules;
+    }
 }
