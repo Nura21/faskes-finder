@@ -16,14 +16,16 @@ use App\Http\Controllers\HealthFacilitiesController;
 |
 */
 
-Route::get('/', function () {
-    return view('welcome');
+Route::middleware('check.outh')->group(function () {
+    Route::view('/', 'welcome');
+    Route::get('login', function(){
+        return view('auth.login');
+    });
+    Route::post('loginPost', [AuthController::class, 'login']);
 });
 
-Route::view('login', 'auth.login');
-Route::post('loginPost', [AuthController::class, 'login']);
-
-Route::middleware()->group(function () {
+Route::middleware('check.auth')->group(function () {
     Route::resource('health-facilities', HealthFacilitiesController::class);
     Route::get('users', [UserController::class, 'index']);
+    Route::post('logout', [AuthController::class, 'logout']);
 });

@@ -7,6 +7,7 @@ use Illuminate\Support\Facades\Hash;
 use App\Http\Requests\AuthRequest;
 use App\Models\User;
 use App\Models\HealthFacilities;
+use Illuminate\Support\Facades\Session;
 
 class AuthController extends Controller
 {
