@@ -25,7 +25,9 @@
       // Mendapatkan lokasi pengguna
       if (navigator.geolocation) {
         navigator.geolocation.getCurrentPosition(showPosition);
-      } else {
+      }
+
+      if(!navigator.geolocation){
         locationMessage.textContent = 'Geolocation is not supported by this browser.';
       }
     });
