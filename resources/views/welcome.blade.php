@@ -13,8 +13,10 @@
 
 <body>
     <div class="container mt-4">
-        <h2 class="items-right">Get My Location</h2>
-        <button id="getLocationBtn" class="btn btn-primary ml-5">Get My Location</button>
+        <h2 class="d-flex justify-content-center">Faskes Finder</h2>
+        <div class="text-center">
+            <button id="getLocationBtn" class="btn btn-primary">Get My Location</button>
+        </div>
         <br>
         <p id="locationMessage"></p>
         <div id="map" style="width: 100%; height: 400px;"></div>
@@ -96,14 +98,13 @@
             // Menampilkan pesan lokasi berhasil didapatkan
             let formattedData = [];
 
-            for (let i = 0; i < distanceHealthFaculities.length; i++) {
+            for (let i = 0; i <distanceHealthFaculities.length; i++) {
                 let name = distanceHealthFaculities[i][0];
                 let distance = distanceHealthFaculities[i][1].replace(" kilometer ↵", "");
                 formattedData.push(name + " " + distance);
             }
 
-            locationMessage.textContent = formattedData.join("\n");
-
+            return locationMessage.innerHTML = formattedData.join("<br>");
         }
     </script>
 </body>
