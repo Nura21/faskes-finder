@@ -65,7 +65,7 @@
             const c = 2 * Math.atan2(Math.sqrt(a), Math.sqrt(1 - a));
             const distance = earthRadius * c; // Jarak dalam kilometer
 
-            return Math.round(distance).toString() + ' kilometer';
+            return distance.toString() + ' kilometer \n';
         }
 
         function getDistance(lat, long) {
@@ -90,11 +90,20 @@
                 L.marker([lat, long]).addTo(map).bindPopup('Lokasi Pengguna');
                 L.marker([dataHealthFaculities[health]['lat'], dataHealthFaculities[health]['long']]).addTo(map).bindPopup(
                     dataHealthFaculities[health]['name']);
-                    console.log(L);
+                console.log(L);
             }
 
             // Menampilkan pesan lokasi berhasil didapatkan
-            locationMessage.textContent = distanceHealthFaculities;
+            let formattedData = [];
+
+            for (let i = 0; i < distanceHealthFaculities.length; i++) {
+                let name = distanceHealthFaculities[i][0];
+                let distance = distanceHealthFaculities[i][1].replace(" kilometer ↵", "");
+                formattedData.push(name + " " + distance);
+            }
+
+            locationMessage.textContent = formattedData.join("\n");
+
         }
     </script>
 </body>
