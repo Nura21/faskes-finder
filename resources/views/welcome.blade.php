@@ -17,7 +17,7 @@
         <button id="getLocationBtn" class="btn btn-primary ml-5">Get My Location</button>
         <br>
         <p id="locationMessage"></p>
-        <div id="map"></div>
+        <div id="map" style="width: 100%; height: 400px;"></div>
     </div>
     <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
@@ -41,10 +41,7 @@
             const latitude = position.coords.latitude;
             const longitude = position.coords.longitude;
 
-            // // Menampilkan pesan lokasi berhasil didapatkan
-            // locationMessage.textContent = `Lokasi berhasil didapatkan. Latitude: ${latitude}, Longitude: ${longitude}`;
-
-            getDistance(latitude, longitude);
+            return getDistance(latitude, longitude);
         }
 
         // Fungsi untuk mengkonversi sudut dalam derajat ke radian
@@ -93,8 +90,8 @@
                 L.marker([lat, long]).addTo(map).bindPopup('Lokasi Pengguna');
                 L.marker([dataHealthFaculities[health]['lat'], dataHealthFaculities[health]['long']]).addTo(map).bindPopup(
                     dataHealthFaculities[health]['name']);
+                    console.log(L);
             }
-            console.log(distanceHealthFaculities);
 
             // Menampilkan pesan lokasi berhasil didapatkan
             locationMessage.textContent = distanceHealthFaculities;
