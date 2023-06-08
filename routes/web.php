@@ -2,6 +2,7 @@
 
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\AuthController;
+use App\Http\Controllers\GetLocationController;
 use App\Http\Controllers\UserController;
 use App\Http\Controllers\HealthFacilitiesController;
 
@@ -17,7 +18,7 @@ use App\Http\Controllers\HealthFacilitiesController;
 */
 
 Route::middleware('check.outh')->group(function () {
-    Route::view('/', 'welcome');
+    Route::get('/', [GetLocationController::class, 'index']);
     Route::get('login', function(){
         return view('auth.login');
     });
