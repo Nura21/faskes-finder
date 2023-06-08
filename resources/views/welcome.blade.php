@@ -101,7 +101,7 @@
             for (let i = 0; i <distanceHealthFaculities.length; i++) {
                 let name = distanceHealthFaculities[i][0];
                 let distance = distanceHealthFaculities[i][1].replace(" kilometer ↵", "");
-                formattedData.push(name + " " + distance);
+                formattedData.push(name + " memiliki jarak sekitar " + distance);
             }
 
             return locationMessage.innerHTML = formattedData.join("<br>");
