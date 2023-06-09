@@ -5,15 +5,18 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <link rel="stylesheet" href="{{ asset('plugins/fontawesome-free/css/all.min.css') }}">
     <link rel="stylesheet" href="https://unpkg.com/leaflet/dist/leaflet.css" />
     <script src="https://unpkg.com/leaflet/dist/leaflet.js"></script>
-
-    <title>Get My Location</title>
+    <title>Faskes Finder</title>
 </head>
 
 <body>
     <div class="container mt-4">
-        <h2 class="d-flex justify-content-center">Faskes Finder</h2>
+        <h2 class="d-flex justify-content-center">
+            <i class="far fa-search-location"></i>
+            Faskes Finder
+        </h2>
         <div class="text-center">
             <button id="getLocationBtn" class="btn btn-primary">Get My Location</button>
         </div>
@@ -30,11 +33,11 @@
         getLocationBtn.addEventListener('click', function() {
             // Mendapatkan lokasi pengguna
             if (navigator.geolocation) {
-                navigator.geolocation.getCurrentPosition(showPosition);
+                return navigator.geolocation.getCurrentPosition(showPosition);
             }
 
             if (!navigator.geolocation) {
-                locationMessage.textContent = 'Geolocation is not supported by this browser.';
+                return locationMessage.textContent = 'Geolocation is not supported by this browser.';
             }
         });
 
@@ -95,10 +98,10 @@
                 console.log(L);
             }
 
-            // Menampilkan pesan lokasi berhasil didapatkan
+            // Menampilkan lokasi berhasil didapatkan
             let formattedData = [];
 
-            for (let i = 0; i <distanceHealthFaculities.length; i++) {
+            for (let i = 0; i < distanceHealthFaculities.length; i++) {
                 let name = distanceHealthFaculities[i][0];
                 let distance = distanceHealthFaculities[i][1].replace(" kilometer ↵", "");
                 formattedData.push(name + " memiliki jarak sekitar " + distance);

@@ -11,7 +11,7 @@ class GetLocationController extends Controller
         $healths = HealthFacilities::query()
             ->select(['name', 'lat', 'long'])
             ->get();
-
+            
         return view('welcome', compact("healths"));
     }
 }
