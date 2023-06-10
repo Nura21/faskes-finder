@@ -8,12 +8,14 @@
     <link rel="stylesheet" href="{{ asset('plugins/fontawesome-free/css/all.min.css') }}">
     <link rel="stylesheet" href="https://unpkg.com/leaflet/dist/leaflet.css" />
     <script src="https://unpkg.com/leaflet/dist/leaflet.js"></script>
+    <link rel="icon" href="{{ asset('dist/img/marker-3314279_640-removebg-preview-2.png') }}"
+        style="width: 100px; height:100px;">
     <title>Faskes Finder</title>
 </head>
 
-<body>
+<body style="background: url('{{ asset('dist/img/location-4496459_1280-2.png') }}')">
     <div class="container mt-4">
-        <h2 class="d-flex justify-content-center">
+        <h2 class="d-flex justify-content-center mt-md-5">
             <i class="far fa-search-location"></i>
             Faskes Finder
         </h2>
@@ -68,7 +70,7 @@
                 Math.sin(dLon / 2) * Math.sin(dLon / 2);
 
             const c = 2 * Math.atan2(Math.sqrt(a), Math.sqrt(1 - a));
-            const distance = earthRadius * c; // Jarak dalam kilometer
+            const distance = Math.round(earthRadius * c); // Jarak dalam kilometer
 
             return distance.toString() + ' kilometer \n';
         }
@@ -92,10 +94,21 @@
                     dataHealthFaculities[health]['lat'], dataHealthFaculities[health]['long'])]);
 
                 // Add markers for the user and destinations
-                L.marker([lat, long]).addTo(map).bindPopup('Lokasi Pengguna');
-                L.marker([dataHealthFaculities[health]['lat'], dataHealthFaculities[health]['long']]).addTo(map).bindPopup(
+                L.marker([lat, long], {
+                    icon: L.icon({
+                        iconUrl: 'https://cdnjs.cloudflare.com/ajax/libs/leaflet/1.7.1/images/marker-icon.png',
+                        iconSize: [25, 41],
+                        iconAnchor: [12, 41]
+                    })
+                }).addTo(map).bindPopup('Lokasi Pengguna');
+                L.marker([dataHealthFaculities[health]['lat'], dataHealthFaculities[health]['long']], {
+                    icon: L.icon({
+                        iconUrl: 'https://cdn.rawgit.com/pointhi/leaflet-color-markers/master/img/marker-icon-red.png',
+                        iconSize: [25, 41],
+                        iconAnchor: [12, 41]
+                    })
+                }).addTo(map).bindPopup(
                     dataHealthFaculities[health]['name']);
-                console.log(L);
             }
 
             // Menampilkan lokasi berhasil didapatkan
