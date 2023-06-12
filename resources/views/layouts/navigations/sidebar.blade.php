@@ -1,6 +1,6 @@
 <nav class="mt-2">
     <ul class="nav nav-pills nav-sidebar flex-column" data-widget="treeview" role="menu" data-accordion="false">
-        <li class="nav-item">
+        {{-- <li class="nav-item">
             <a href="#" class="nav-link">
                 <i class="nav-icon fas fa-user mr-md-2"></i>
                 <p>
@@ -16,7 +16,7 @@
                     </a>
                 </li>
             </ul>
-        </li>
+        </li> --}}
         <li class="nav-item">
             <a href="#" class="nav-link">
                 <i class="far fa-hospital ml-1"></i>

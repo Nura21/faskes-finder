@@ -3,7 +3,7 @@
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\AuthController;
 use App\Http\Controllers\GetLocationController;
-use App\Http\Controllers\UserController;
+// use App\Http\Controllers\UserController;
 use App\Http\Controllers\HealthFacilitiesController;
 
 /*
@@ -27,6 +27,6 @@ Route::middleware('check.outh')->group(function () {
 
 Route::middleware('check.auth')->group(function () {
     Route::resource('health-facilities', HealthFacilitiesController::class);
-    Route::get('users', [UserController::class, 'index']);
+    // Route::get('users', [UserController::class, 'index']);
     Route::post('logout', [AuthController::class, 'logout']);
 });
