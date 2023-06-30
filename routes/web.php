@@ -28,5 +28,6 @@ Route::middleware('check.outh')->group(function () {
 Route::middleware('check.auth')->group(function () {
     Route::resource('health-facilities', HealthFacilitiesController::class);
     // Route::get('users', [UserController::class, 'index']);
+    Route::get('dashboard', [AuthController::class, 'dashboard']);
     Route::post('logout', [AuthController::class, 'logout']);
 });

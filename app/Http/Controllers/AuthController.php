@@ -17,18 +17,22 @@ class AuthController extends Controller
             $user = User::where('email', $request->email)->first();
 
             if (!empty($user) && Hash::check($request->password, $user->password)) {
-
-                return view('dashboard')->with([
-                    "success" => 'Berhasil Login',
-                    "users" => count(User::all()),
-                    "healths" => count(HealthFacilities::all()),
-                ]);
+                return redirect('dashboard');
             }
 
             return back()->with('message', 'Failed! Invalid password');
         }
 
         return redirect('login')->withInput()->with("message", 'Check your email again!');
+    }
+
+    public function dashboard()
+    {
+        return view('dashboard')->with([
+            "success" => 'Berhasil Login',
+            // "users" => count(User::all()),
+            "healths" => count(HealthFacilities::all()),
+        ]);
     }
 
     public function logout()
