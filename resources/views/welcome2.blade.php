@@ -38,11 +38,16 @@
 
         getLocationBtn.addEventListener('click', function() {
             if (navigator.geolocation) {
+                alert('Please wait, we still processing!')
                 return navigator.geolocation.getCurrentPosition(showPosition);
             }
 
             if (!navigator.geolocation) {
-                return locationMessage.textContent = 'Geolocation is not supported by this browser.';
+                alert('Geolocation is not supported by this browser and please wait for reload!');
+
+                setTimeout(function(){
+                    window.location.reload();
+                }, 5000);
             }
         });
 
