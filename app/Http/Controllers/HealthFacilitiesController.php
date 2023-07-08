@@ -45,16 +45,20 @@ class HealthFacilitiesController extends Controller
     /**
      * Show the form for editing the specified resource.
      */
-    public function edit(HealthFacilities $healthFacilities)
+    public function edit($id)
     {
+        $healthFacilities = HealthFacilities::findOrFail($id);
+
         return view('manages.health-facility.edit', compact('healthFacilities'));
     }
 
     /**
      * Update the specified resource in storage.
      */
-    public function update(HealthFacilitiesRequest $request, HealthFacilities $healthFacilities)
+    public function update(HealthFacilitiesRequest $request, $id)
     {
+        $healthFacilities = HealthFacilities::findOrFail($id);
+
         $healthFacilities->update([
             'name' => $request->name,
             'lat' => $request->lat,
