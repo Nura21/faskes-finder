@@ -1,7 +1,7 @@
 <?php
 
 return [
-    'name' => 'Health Facility',
+    'name' => 'Health Facilities',
     'lat' => 'Lat',
     'long' => 'Long',
     'status' => 'Status',

@@ -24,7 +24,7 @@
                 <div class="inner">
                     <h3>{{ $healths ? $healths : '-' }}</h3>
 
-                    <p>Health Faculty</p>
+                    <p>{{ __('health_facility.name') }}</p>
                 </div>
                 <div class="icon">
                     <i class="ion ion-person"></i>

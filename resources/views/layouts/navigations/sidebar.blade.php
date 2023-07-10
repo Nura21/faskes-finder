@@ -21,7 +21,7 @@
             <a href="#" class="nav-link">
                 <i class="far fa-hospital ml-1"></i>
                 <p>
-                    &nbsp;Health Faculty
+                    &nbsp;Health Facilities
                     <i class="fas fa-angle-left right"></i>
                 </p>
             </a>
